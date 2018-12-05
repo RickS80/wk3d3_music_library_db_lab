@@ -51,6 +51,13 @@ attr_accessor :name
     sql = "UPDATE artists SET name = ($1) WHERE id = $2"
     values = [@name, @id]
     results = SqlRunner.run(sql, values)
+  end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM artists WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)[0]
+    return Artist.new(results)
 
   end
 
