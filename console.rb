@@ -14,10 +14,18 @@ album1 = Album.new({
   'artist_id' => artist1.id
   })
 
-  album1.save
+
+  album2 = Album.new({
+    'title' => 'Smells like the wrong name',
+    'genre' => 'folk',
+    'artist_id' => artist1.id
+    })
+
+
+      album1.save
+    album2.save
 
 
 
-
-binding.pry
-nil
+    binding.pry
+    nil
